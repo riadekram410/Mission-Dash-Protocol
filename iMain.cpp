@@ -1,154 +1,127 @@
 #include "iGraphics.h"
+#include "Audio.hpp"
+#include "Home_menu_level.hpp"
+#include "Level1.hpp"
 
-void drawStartPage();
-
+// Blink text toggle
 int showText = 1;
 
-void blinkTimer() {
-	showText = !showText; // Toggle visibility
-}
+// Backgrounds
+int bgImage1, bgImage2, bgPlayGround;
+int currentPage = 1;  // 1 = home, 2 = menu, 3 = playground
 
-int bgImage1,bgImage2;
-int currentPage = 1; // To store the image reference
-
-// Image IDs
+// Menu button images
 int img[4];
-
-// Image positions and sizes
 int imgX[4] = { 420, 420, 420, 420 };
 int imgY[4] = { 430, 310, 210, 110 };
-int imgW = 200;
-int imgH = 70;
+int imgW = 200, imgH = 70;
 
-// Hover effect (scale factor)
-float hoverScale = 1.2;  // 20% bigger on hover
+// Hover effect
+float hoverScale = 1.2f;
 int hoveredImg = -1;
 
-int startPage = 0;
+// Page states
+int startPage = 0;        // 1 = story1, 2 = story2
+int currentState = 0;     // for progressing menu stories
+int levelPage = 0;        // 1 = level select
+int levelStoryPage = 0;   // 1 = level1 story1, 2 = level1 story2
+int playGroundPage = 0;  // 1 = playground (after level story)
+
+// Level button images
+int levelBg;
+int lvlImg[3];
+int hoveredLevel = -1;
+int lvlX[3] = { 380, 380, 380 };
+int lvlY[3] = { 360, 250, 140 };
+int lvlW = 240, lvlH = 80;
+
+// Character Position and Animation Variables
+int charX = 100, charY = 55;
+bool isFiring = false;
+int fireFrame = 0;
+int bulletCount = 0;
+
+
+int currentFrame = 0;
+bool isMoving = false;
+bool isLeftMoving = false;
+bool isRunning = false;
+bool isLeftWalking = false;
+bool dPressed = false;
+bool aPressed = false;
+bool shiftPressed = false;
+int  drawY = 0, jumpY = 0, jumpVelocity = 0;
+bool isJumping = false;
+bool wasRunningBeforeJump = false;
+bool isHomeMusicPlaying = true;
+bool isPlayMusicStarted = false;
+void updateFrame();
+
+int bgOffset = 0, bgCount = 0;// Tracks how much we've scrolled
 
 void iDraw()
 {
 	iClear();
-	if (currentPage == 1){
-		iShowImage(0, 0, 1000, 600, bgImage1); // Draws the background image
-		if (showText) { //Shows text
-			iSetColor(255, 255, 255);
-			iText(600, 50, "Please press ENTER to continue...", GLUT_BITMAP_HELVETICA_18);
-		}
-	}
-	else{
-		iShowImage(0, 0, 1000, 600, bgImage2);
 
-		for (int i = 0; i < 4; i++) {
-			int w = imgW, h = imgH;
-
-			// Apply scaling only to the hovered image
-			if (hoveredImg == i) {
-				w = imgW * hoverScale;
-				h = imgH * hoverScale;
-				// Center the scaled image
-				iShowImage(imgX[i] - (w - imgW) / 2, imgY[i] - (h - imgH) / 2, w, h, img[i]);
-			}
-			else {
-				// Draw normal size
-				iShowImage(imgX[i], imgY[i], imgW, imgH, img[i]);
-			}
-		}
-		if (startPage == 1){ //Activates start button
-			drawStartPage();
-		}
-		if (startPage == 2){ //Shos 2nd page of start button
-			iSetColor(0, 0, 0);
-			iFilledRectangle(0, 0, 1000, 600);
-			iShowBMP2(0, 0, "Image//story2.bmp", 0);
-		}
-	}
+	homeMenuPage();
+	showPlayLevel_1();
 }
 
-void iMouseMove(int mx, int my)
-{
 
-}
 
 void iPassiveMouseMove(int mx, int my)
 {
-	if (currentPage == 2) {
-		hoveredImg = -1;  // Reset hover state
-
-		// Check which image is hovered
-		for (int i = 0; i < 4; i++) {
-			if (mx >= imgX[i] && mx <= imgX[i] + imgW &&my >= imgY[i] && my <= imgY[i] + imgH) {
-				hoveredImg = i;
-				break;
-			}
-		}
-	}
+	hoverMenu(mx, my);
+	hoverLevel(mx, my);
 }
 
 void iMouse(int button, int state, int mx, int my)
 {
-	
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
-	{
-		if (currentPage == 2 && (mx >= imgX[0] && mx <= imgX[0] + imgW && my >= imgY[0] && my <= imgY[0] + imgH)) { //Click on start button
-			startPage = 1;
-		}
-
-	}
-	
-	
-	if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
-	{
-		
-	}
+	showMenuLevel_1(button, state, mx, my);
 }
-
-// Special Keys:
-// GLUT_KEY_F1, GLUT_KEY_F2, GLUT_KEY_F3, GLUT_KEY_F4, GLUT_KEY_F5, GLUT_KEY_F6, GLUT_KEY_F7, GLUT_KEY_F8, GLUT_KEY_F9, GLUT_KEY_F10, GLUT_KEY_F11, GLUT_KEY_F12, 
-// GLUT_KEY_LEFT, GLUT_KEY_UP, GLUT_KEY_RIGHT, GLUT_KEY_DOWN, GLUT_KEY_PAGE UP, GLUT_KEY_PAGE DOWN, GLUT_KEY_HOME, GLUT_KEY_END, GLUT_KEY_INSERT
+void iMouseMove(int mx, int my)
+{
+	// optional: handle dragging; leave empty if not needed
+}
 
 void fixedUpdate()
 {
-	if (isKeyPressed('w') || isSpecialKeyPressed(GLUT_KEY_UP))
-	{
-		
-	}
-	if (isKeyPressed('a') || isSpecialKeyPressed(GLUT_KEY_LEFT))
-	{
-		
-	}
-	if (isKeyPressed('s') || isSpecialKeyPressed(GLUT_KEY_DOWN))
-	{
-		
-	}
-	if (isKeyPressed('d') || isSpecialKeyPressed(GLUT_KEY_RIGHT))
-	{
-		startPage = 2;
-	}
-
-	if (isKeyPressed('\r')) {
-		currentPage = 2;
-	}
+	keyPressLevel_1();
 }
 
-void drawStartPage(){ //Draws first page of start button
-	iSetColor(0, 0, 0);
-	iFilledRectangle(0, 0, 1000, 600);
-	iShowBMP2(0, 0, "Image//story1.bmp",0);
+void blinkTimer() { 
+	showText = !showText; 
 }
 
 int main()
 {
-	// Set up a timer that calls blinkTimer every 750ms
-		iSetTimer(750, blinkTimer);
-		iInitialize(1000, 600, "Mission Dash Protocol"); // Set window size and title
-		bgImage1 = iLoadImage("Image/loading/home.bmp");
-		bgImage2 = iLoadImage("Image/loading/menu.bmp");
-		img[0] = iLoadImage("Image/menu/start.bmp");
-		img[1] = iLoadImage("Image/menu/instructions.bmp");
-		img[2] = iLoadImage("Image/menu/aboutus.bmp");
-		img[3] = iLoadImage("Image/menu/exit.bmp");
+	iSetTimer(750, blinkTimer);
+	iSetTimer(100, updateFrameLevel_1);
+	iInitialize(1000, 600, "Mission Dash Protocol");
+	// Backgrounds
+	bgImage1 = iLoadImage("image/loading/home.bmp");
+	bgImage2 = iLoadImage("image/loading/menu.bmp");
+	bgPlayGround = iLoadImage("image/play.bmp");  // Added playground background
 
-		iStart(); 
-		return 0;
+	// Menu buttons
+	img[0] = iLoadImage("image/menu/start.bmp");
+	img[1] = iLoadImage("image/menu/instructions.bmp");
+	img[2] = iLoadImage("image/menu/aboutus.bmp");
+	img[3] = iLoadImage("image/menu/exit.bmp");
+
+	// Level Background
+	levelBg = iLoadImage("image/level0.bmp");
+	// Play home music until levelStoryPage reaches 2
+	playHomeMusic();
+
+	// Level buttons
+	lvlImg[0] = iLoadImage("image/LEVELBUTTON/levelbutton1.bmp");
+	lvlImg[1] = iLoadImage("image/LEVELBUTTON/levelbutton2.bmp");
+	lvlImg[2] = iLoadImage("image/LEVELBUTTON/levelbutton3.bmp");
+	for (int i = 0; i < MAX_BULLETS; i++){
+		bulletActive[i] = false;
+	}
+
+	iStart();
+	return 0;
 }
