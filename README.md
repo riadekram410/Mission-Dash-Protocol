@@ -27,12 +27,7 @@ Manual Running: Players control movement entirely — running is not automated.
 
 •⁠  ⁠Combo Scoring: Bonus XP for killing enemies consecutively without missing.
 
-•⁠  ⁠Unlockable Characters: 
-         -Multiple agents can be unlocked using XP.
-         -Each has a unique XP threshold and aesthetic.
-         -Character-specific scorecards track high scores and kills.
-         
-•⁠  ⁠Skins & Suits: Players can unlock custom suits based on score, XP, and level completion.
+
 •⁠  ⁠Dynamic Backgrounds: Level environments visually evolve with story progression.
 •⁠  ⁠Boss Fights: Optional final-level boss battle representing NOVA’s last defense.
 •⁠  ⁠Randomized Waves: Enemies and traps appear in randomized patterns for replayability.
@@ -100,15 +95,9 @@ Open the project in Visual Studio 2013
 
 
 
-## Screenshots
 
-### **Menu**
-<img src="https://github.com/user-attachments/assets/812b978b-b4f9-4cc2-8116-067f85e943bd" width="200" height="200">
 
-### **Character**
-<img src="https://github.com/user-attachments/assets/5c8a5fbb-6ebf-48cd-bff0-8235e79d9773" width="200" height="200">
 
-## Youtube Link
 [CSE 1200 Project: Mission Dash Protocol](https://youtu.be/c3MclYXrys8?si=vQ4jDnwqufyAQ7j8)
 
 
