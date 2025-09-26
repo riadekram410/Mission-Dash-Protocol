@@ -12,7 +12,7 @@ In the futuristic game **Mission: Dash Protocol**, you become Agent K, a super-s
 ## Features
 Manual Running: Players control movement entirely — running is not automated.
 
-•⁠  ⁠Story-Based Chapters: 3 levels, each with increasing challenge and narrative depth.
+•⁠  ⁠Story-Based Chapters: 2 levels, each with increasing challenge and narrative depth.
 
 •⁠  ⁠Enemy Types (5 total): Grunt Bots, Shooter Drones, Jumper Bots, Exploder Units, and Laser-Guard Units — each with unique mechanics.
 
@@ -78,8 +78,9 @@ Open the project in Visual Studio 2013
 ### **Controls**
 
 
-# *D* --> to walk forward
-# *D + Space bar --> to sprint forward
+# *D* --> to walk forward right
+# *A*--> to walk backward left
+# *D + Space bar --> to sprint forward and firing
 # *S* --> to stop movement and firing
 # *Shift (while moving)* --> Run faster
 # *Right Arrow* --> progress through story mode
@@ -88,14 +89,7 @@ Open the project in Visual Studio 2013
 
 
 
-### **Game Rules**
 
-- 
-- 
-- 
-- 
-- 
-- 
 
 
 ## Project Contributors
@@ -115,7 +109,7 @@ Open the project in Visual Studio 2013
 <img src="https://github.com/user-attachments/assets/5c8a5fbb-6ebf-48cd-bff0-8235e79d9773" width="200" height="200">
 
 ## Youtube Link
-[CSE 1200 Project: Mission Dash Protocol](https://www.youtube.com/)
+[CSE 1200 Project: Mission Dash Protocol](https://youtu.be/c3MclYXrys8?si=vQ4jDnwqufyAQ7j8)
 
 
   **To explore the images and sprites,we have uploaded a zip in the drive**
