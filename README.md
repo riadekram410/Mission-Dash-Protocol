@@ -98,7 +98,7 @@ Open the project in Visual Studio 2013
 
 
 
-[CSE 1200 Project: Mission Dash Protocol](https://youtu.be/c3MclYXrys8?si=vQ4jDnwqufyAQ7j8)
+[CSE 1200 Project: Mission Dash Protocol](https://www.youtube.com/watch?v=3s8RF50dYmg)
 
 
   **To explore the images and sprites,we have uploaded a zip in the drive**
