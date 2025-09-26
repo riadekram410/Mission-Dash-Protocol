@@ -117,6 +117,9 @@ Open the project in Visual Studio 2013
 ## Youtube Link
 [CSE 1200 Project: Mission Dash Protocol](https://www.youtube.com/)
 
+
+  **To explore the images and sprites,we have uploaded a zip in the drive**
+
 ## Project Report
-[Project Report: Mission Dash Protocol](https://drive.google.com/drive/u/1/my-drive)
+[Project Report: Mission Dash Protocol](https://drive.google.com/drive/folders/1lxPnz4NIEnYcmspGomgPyKO2S8h-OXra)
 
