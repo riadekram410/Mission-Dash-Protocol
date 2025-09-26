@@ -1,0 +1,86 @@
+﻿Build started 8/24/2025 10:36:25 PM.
+     1>Project "C:\Users\USER\Downloads\Mission Dash\DashProtocol - Copy.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (DashProtocol.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt iMain.cpp
+         iMain.cpp
+     1>c:\users\user\downloads\mission dash\traps.hpp(67): error C2601: 'updateFrame' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\level1.hpp(11): error C2601: 'randomTrapHandler' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\level1.hpp(47): error C2601: 'handlePageTransitions' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\level1.hpp(69): error C2601: 'keyPressLevel_1' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\level1.hpp(147): error C2601: 'updateFrameLevel_1' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\imain.cpp(15): error C2086: 'int currentPage' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(20) : see declaration of 'currentPage'
+     1>c:\users\user\downloads\mission dash\imain.cpp(28): error C2086: 'int startPage' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(16) : see declaration of 'startPage'
+     1>c:\users\user\downloads\mission dash\imain.cpp(30): error C2086: 'int levelPage' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(17) : see declaration of 'levelPage'
+     1>c:\users\user\downloads\mission dash\imain.cpp(31): error C2086: 'int levelStoryPage' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(18) : see declaration of 'levelStoryPage'
+     1>c:\users\user\downloads\mission dash\imain.cpp(32): error C2086: 'int playGroundPage' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(19) : see declaration of 'playGroundPage'
+     1>c:\users\user\downloads\mission dash\imain.cpp(43): error C2086: 'int charX' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(7) : see declaration of 'charX'
+     1>c:\users\user\downloads\mission dash\imain.cpp(43): error C2086: 'int charY' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(7) : see declaration of 'charY'
+     1>c:\users\user\downloads\mission dash\imain.cpp(44): error C2086: 'bool isFiring' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(22) : see declaration of 'isFiring'
+     1>c:\users\user\downloads\mission dash\imain.cpp(45): error C2086: 'int fireFrame' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(23) : see declaration of 'fireFrame'
+     1>c:\users\user\downloads\mission dash\imain.cpp(46): error C2086: 'int bulletCount' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(29) : see declaration of 'bulletCount'
+     1>c:\users\user\downloads\mission dash\imain.cpp(49): error C2086: 'int currentFrame' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(32) : see declaration of 'currentFrame'
+     1>c:\users\user\downloads\mission dash\imain.cpp(50): error C2086: 'bool isMoving' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(33) : see declaration of 'isMoving'
+     1>c:\users\user\downloads\mission dash\imain.cpp(51): error C2086: 'bool isLeftMoving' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(34) : see declaration of 'isLeftMoving'
+     1>c:\users\user\downloads\mission dash\imain.cpp(52): error C2086: 'bool isRunning' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(35) : see declaration of 'isRunning'
+     1>c:\users\user\downloads\mission dash\imain.cpp(53): error C2086: 'bool isLeftWalking' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(36) : see declaration of 'isLeftWalking'
+     1>c:\users\user\downloads\mission dash\imain.cpp(54): error C2086: 'bool dPressed' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(37) : see declaration of 'dPressed'
+     1>c:\users\user\downloads\mission dash\imain.cpp(55): error C2086: 'bool aPressed' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(38) : see declaration of 'aPressed'
+     1>c:\users\user\downloads\mission dash\imain.cpp(56): error C2086: 'bool shiftPressed' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(39) : see declaration of 'shiftPressed'
+     1>c:\users\user\downloads\mission dash\imain.cpp(57): error C2086: 'int drawY' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(40) : see declaration of 'drawY'
+     1>c:\users\user\downloads\mission dash\imain.cpp(57): error C2086: 'int jumpY' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(40) : see declaration of 'jumpY'
+     1>c:\users\user\downloads\mission dash\imain.cpp(57): error C2086: 'int jumpVelocity' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(40) : see declaration of 'jumpVelocity'
+     1>c:\users\user\downloads\mission dash\imain.cpp(58): error C2086: 'bool isJumping' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(41) : see declaration of 'isJumping'
+     1>c:\users\user\downloads\mission dash\imain.cpp(59): error C2086: 'bool wasRunningBeforeJump' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(42) : see declaration of 'wasRunningBeforeJump'
+     1>c:\users\user\downloads\mission dash\imain.cpp(64): error C2086: 'int bgOffset' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(44) : see declaration of 'bgOffset'
+     1>c:\users\user\downloads\mission dash\imain.cpp(64): error C2086: 'int bgCount' : redefinition
+                 c:\users\user\downloads\mission dash\level1.hpp(44) : see declaration of 'bgCount'
+     1>c:\users\user\downloads\mission dash\imain.cpp(67): error C2601: 'iDraw' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\imain.cpp(85): error C2601: 'iPassiveMouseMove' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\imain.cpp(91): error C2601: 'iMouse' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\imain.cpp(95): error C2601: 'iMouseMove' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\imain.cpp(100): error C2601: 'fixedUpdate' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\imain.cpp(104): error C2601: 'blinkTimer' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\imain.cpp(109): error C2601: 'main' : local function definitions are illegal
+                 c:\users\user\downloads\mission dash\traps.hpp(46): this line contains a '{' which has not yet been matched
+     1>c:\users\user\downloads\mission dash\imain.cpp(143): fatal error C1075: end of file found before the left brace '{' at 'c:\users\user\downloads\mission dash\traps.hpp(46)' was matched
+     1>Done Building Project "C:\Users\USER\Downloads\Mission Dash\DashProtocol - Copy.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.25
